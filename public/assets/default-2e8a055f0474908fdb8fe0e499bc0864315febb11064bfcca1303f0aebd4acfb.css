@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.c
+ *
+
+
+ */
+/* line 18, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.nav-wrapper {
+  background-color: #5D0B7E;
+}
+
+/* line 22, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.item {
+  border: 1px solid #5D0B7E;
+}
+
+/* line 26, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.card-panel {
+  text-align: center;
+  overflow: hidden;
+}
+
+/* line 30, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.card-panel .checklist {
+  text-align: left;
+}
+
+/* line 33, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.mrn-info {
+  text-align: center;
+}
+
+/* line 36, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.patient-box > img {
+  display: block;
+  margin: auto;
+}
+
+/* line 41, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.updated-time {
+  text-align: left;
+}
+
+/* line 44, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.calculator > button {
+  vertical-align: middle;
+}
+
+/* line 47, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.risk-grid-tile {
+  padding-top: 50px;
+  border: 1px solid #A9A8A8;
+}
+
+/* line 52, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.gauge {
+  position: relative;
+  top: -5px;
+  padding: 0;
+  margin: 0;
+}
+/* line 58, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.gauge-label {
+  position: relative;
+  top: 12px;
+  padding: 0 10px 0 0;
+  font: 400 20px/1 Roboto;
+  text-align: center;
+}
+/* line 68, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.gauge-el svg {
+  overflow: visible !important;
+}
+/* line 73, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.gauge-path {
+  position: relative;
+}
+/* line 77, c:/RailsApps/healthview-perform-material-ui/app/assets/stylesheets/default.css.scss */
+.gauge-text {
+  font: 400 10px Roboto;
+  letter-spacing: 3px;
+}

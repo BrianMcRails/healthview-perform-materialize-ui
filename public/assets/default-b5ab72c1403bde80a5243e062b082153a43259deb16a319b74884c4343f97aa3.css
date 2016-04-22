@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.c
+ *
+
+
+ */
+/* line 18, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.nav-wrapper {
+  background-color: #5D0B7E;
+}
+
+/* line 22, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.item {
+  border: 1px solid #5D0B7E;
+}
+
+/* line 26, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.card-panel {
+  text-align: center;
+  overflow: hidden;
+}
+
+/* line 30, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.card-panel .checklist {
+  text-align: left;
+}
+
+/* line 35, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.updated-time {
+  text-align: left;
+}
+
+/* line 39, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.GaugeMeter {
+  position: Relative;
+  text-align: Center;
+  overflow: Hidden;
+  cursor: Default;
+  display: inline-block;
+}
+
+/* line 47, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.GaugeMeter SPAN, .GaugeMeter B {
+  width: 54%;
+  position: Absolute;
+  text-align: Center;
+  display: Inline-Block;
+  color: RGBa(0, 0, 0, 0.8);
+  font-weight: 100;
+  font-family: "Open Sans", Arial;
+  overflow: Hidden;
+  white-space: NoWrap;
+  text-overflow: Ellipsis;
+  margin: 0 23%;
+}
+
+/* line 61, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.GaugeMeter[data-style="Semi"] B {
+  width: 80%;
+  margin: 0 10%;
+}
+
+/* line 66, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.GaugeMeter S, .GaugeMeter U {
+  text-decoration: None;
+  font-size: .60em;
+  font-weight: 200;
+  opacity: .6;
+}
+
+/* line 73, c:/RailsApps/healthview-perform/app/assets/stylesheets/default.css.scss */
+.GaugeMeter B {
+  color: #000;
+  font-weight: 200;
+  opacity: .8;
+}
