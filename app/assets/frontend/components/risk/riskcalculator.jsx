@@ -37,7 +37,7 @@ var RiskCalculator = React.createClass({
   
     return (
       <div className="calculator">
-      <OverlayTrigger placement="right" 
+      <OverlayTrigger placement="top" 
               overlay={<Popover id= {this.props.id} title={this.props.risk_score_title}>Risk is <strong>{this.props.risk_weight}.</strong>
                 {this.props.risk_comment}</Popover>}>
         <Button className="risk-grid-button"

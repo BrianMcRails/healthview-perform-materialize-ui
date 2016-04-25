@@ -2,11 +2,12 @@ import React from 'react';
 import { OverlayTrigger, Popover, Button, ButtonToolbar } from 'react-bootstrap';
 import { Grid, Row, Col } from 'react-bootstrap';
 import RiskCalculator from './riskcalculator';
-
-import GridList from 'material-ui/lib/grid-list/grid-list';
-import GridTile from 'material-ui/lib/grid-list/grid-tile';
-import StarBorder from 'material-ui/lib/svg-icons/toggle/star-border';
-import IconButton from 'material-ui/lib/icon-button';
+import List from 'material-ui/lib/lists/list';
+import ListItem from 'material-ui/lib/lists/list-item';
+import ActionInfo from 'material-ui/lib/svg-icons/action/info';
+import Divider from 'material-ui/lib/divider';
+import Avatar from 'material-ui/lib/avatar';
+import FileFolder from 'material-ui/lib/svg-icons/file/folder';
 
 var Risk = React.createClass({
 	riskWeight: function(weight){
@@ -27,11 +28,18 @@ var Risk = React.createClass({
 	},
 
 	render: function(){
+    let riskStyle = {
+      margin: "auto",
+      paddingRight: "3em",
+      textAlign: "right"
+    };
 		return (
-			<GridTile className="risk-grid-tile" key={this.props.id} title={this.props.risk_score_title} 
-				subtitle={<time>Last updated: {this.props.formattedDate}</time>}>
-        			<RiskCalculator {...this.props}/>
-    		</GridTile>
+			<div>
+			<ListItem style={riskStyle} leftAvatar={<Avatar icon={<RiskCalculator {...this.props} />} />}
+			primaryText={this.props.risk_score_title} 
+			secondaryText={this.props.formattedDate}/>
+			<Divider />
+			</div>
 		);
 	}
 });

@@ -25,7 +25,7 @@ var RiskBox = React.createClass({
 	},
 	render: function() {
 		return (
-				<Col xs={12} md={4}>
+				<Col xs={12} sm={6} md={4}>
 					<RisksList data={this.state.data} />
 				</Col>
 		);

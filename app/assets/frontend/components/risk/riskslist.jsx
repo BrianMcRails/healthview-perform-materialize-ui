@@ -1,10 +1,11 @@
 import React from 'react';
 import Risk from './risk';
 import { Grid, Row, Col } from 'react-bootstrap';
-import GridList from 'material-ui/lib/grid-list/grid-list';
-import GridTile from 'material-ui/lib/grid-list/grid-tile';
-import StarBorder from 'material-ui/lib/svg-icons/toggle/star-border';
-import IconButton from 'material-ui/lib/icon-button';
+import List from 'material-ui/lib/lists/list';
+import ListItem from 'material-ui/lib/lists/list-item';
+import ActionInfo from 'material-ui/lib/svg-icons/action/info';
+import Divider from 'material-ui/lib/divider';
+import Avatar from 'material-ui/lib/avatar';
 import Paper from 'material-ui/lib/paper';
 
 const styles = {
@@ -30,11 +31,9 @@ var RisksList = React.createClass({
 		});
 		return (
 			<Paper zDepth={2} className="card-panel">
-				<div style={styles.root}>
-					<GridList cellHeight={200} style={styles.gridList}>
-							{riskNodes}
-					</GridList>
-				</div>
+				<List subheader="Risk Stratification">
+						{riskNodes}
+				</List>
 			</Paper>
 			);
 	}

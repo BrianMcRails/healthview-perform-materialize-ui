@@ -22,8 +22,12 @@ var PatientBox = React.createClass({
 		this.loadPatientsFromServer();
 	},
 	render: function(){
+		let patientStyle ={
+			margin: "auto",
+			display: "block"
+		};
 		return(
-			<div className="patient-box">
+			<div style={patientStyle} className="patient-box">
 				<PatientsList data={this.state.data} />
 			</div>
 			);

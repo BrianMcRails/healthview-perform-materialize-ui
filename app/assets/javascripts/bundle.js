@@ -23082,7 +23082,7 @@
 		render: function render() {
 			return _react2.default.createElement(
 				_reactBootstrap.Col,
-				{ xs: 12, md: 4 },
+				{ xs: 12, sm: 6, md: 4 },
 				_react2.default.createElement(_riskslist2.default, { data: this.state.data })
 			);
 		}
@@ -23111,21 +23111,25 @@
 
 	var _reactBootstrap = __webpack_require__(200);
 
-	var _gridList = __webpack_require__(467);
+	var _list = __webpack_require__(554);
 
-	var _gridList2 = _interopRequireDefault(_gridList);
+	var _list2 = _interopRequireDefault(_list);
 
-	var _gridTile = __webpack_require__(522);
+	var _listItem = __webpack_require__(556);
 
-	var _gridTile2 = _interopRequireDefault(_gridTile);
+	var _listItem2 = _interopRequireDefault(_listItem);
 
-	var _starBorder = __webpack_require__(523);
+	var _info = __webpack_require__(585);
 
-	var _starBorder2 = _interopRequireDefault(_starBorder);
+	var _info2 = _interopRequireDefault(_info);
 
-	var _iconButton = __webpack_require__(529);
+	var _divider = __webpack_require__(560);
 
-	var _iconButton2 = _interopRequireDefault(_iconButton);
+	var _divider2 = _interopRequireDefault(_divider);
+
+	var _avatar = __webpack_require__(586);
+
+	var _avatar2 = _interopRequireDefault(_avatar);
 
 	var _paper = __webpack_require__(550);
 
@@ -23158,13 +23162,9 @@
 							_paper2.default,
 							{ zDepth: 2, className: 'card-panel' },
 							_react2.default.createElement(
-									'div',
-									{ style: styles.root },
-									_react2.default.createElement(
-											_gridList2.default,
-											{ cellHeight: 200, style: styles.gridList },
-											riskNodes
-									)
+									_list2.default,
+									{ subheader: 'Risk Stratification' },
+									riskNodes
 							)
 					);
 			}
@@ -23192,21 +23192,29 @@
 
 	var _riskcalculator2 = _interopRequireDefault(_riskcalculator);
 
-	var _gridList = __webpack_require__(467);
+	var _list = __webpack_require__(554);
 
-	var _gridList2 = _interopRequireDefault(_gridList);
+	var _list2 = _interopRequireDefault(_list);
 
-	var _gridTile = __webpack_require__(522);
+	var _listItem = __webpack_require__(556);
 
-	var _gridTile2 = _interopRequireDefault(_gridTile);
+	var _listItem2 = _interopRequireDefault(_listItem);
 
-	var _starBorder = __webpack_require__(523);
+	var _info = __webpack_require__(585);
 
-	var _starBorder2 = _interopRequireDefault(_starBorder);
+	var _info2 = _interopRequireDefault(_info);
 
-	var _iconButton = __webpack_require__(529);
+	var _divider = __webpack_require__(560);
 
-	var _iconButton2 = _interopRequireDefault(_iconButton);
+	var _divider2 = _interopRequireDefault(_divider);
+
+	var _avatar = __webpack_require__(586);
+
+	var _avatar2 = _interopRequireDefault(_avatar);
+
+	var _folder = __webpack_require__(587);
+
+	var _folder2 = _interopRequireDefault(_folder);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23231,16 +23239,18 @@
 		},
 
 		render: function render() {
+			var riskStyle = {
+				margin: "auto",
+				paddingRight: "3em",
+				textAlign: "right"
+			};
 			return _react2.default.createElement(
-				_gridTile2.default,
-				{ className: 'risk-grid-tile', key: this.props.id, title: this.props.risk_score_title,
-					subtitle: _react2.default.createElement(
-						'time',
-						null,
-						'Last updated: ',
-						this.props.formattedDate
-					) },
-				_react2.default.createElement(_riskcalculator2.default, this.props)
+				'div',
+				null,
+				_react2.default.createElement(_listItem2.default, { style: riskStyle, leftAvatar: _react2.default.createElement(_avatar2.default, { icon: _react2.default.createElement(_riskcalculator2.default, this.props) }),
+					primaryText: this.props.risk_score_title,
+					secondaryText: this.props.formattedDate }),
+				_react2.default.createElement(_divider2.default, null)
 			);
 		}
 	});
@@ -42516,7 +42526,7 @@
 	      { className: 'calculator' },
 	      _react2.default.createElement(
 	        _reactBootstrap.OverlayTrigger,
-	        { placement: 'right',
+	        { placement: 'top',
 	          overlay: _react2.default.createElement(
 	            _reactBootstrap.Popover,
 	            { id: this.props.id, title: this.props.risk_score_title },
@@ -42603,154 +42613,7 @@
 	exports.default = RiskCalculator;
 
 /***/ },
-/* 467 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _stylePropable = __webpack_require__(468);
-
-	var _stylePropable2 = _interopRequireDefault(_stylePropable);
-
-	var _getMuiTheme = __webpack_require__(492);
-
-	var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	var GridList = _react2.default.createClass({
-	  displayName: 'GridList',
-
-	  propTypes: {
-	    /**
-	     * Number of px for one cell height.
-	     */
-	    cellHeight: _react2.default.PropTypes.number,
-
-	    /**
-	     * Grid Tiles that will be in Grid List.
-	     */
-	    children: _react2.default.PropTypes.node,
-
-	    /**
-	     * Number of columns.
-	     */
-	    cols: _react2.default.PropTypes.number,
-
-	    /**
-	     * Number of px for the padding/spacing between items.
-	     */
-	    padding: _react2.default.PropTypes.number,
-
-	    /**
-	     * Override the inline-styles of the root element.
-	     */
-	    style: _react2.default.PropTypes.object
-	  },
-
-	  contextTypes: {
-	    muiTheme: _react2.default.PropTypes.object
-	  },
-
-	  //for passing default theme context to children
-	  childContextTypes: {
-	    muiTheme: _react2.default.PropTypes.object
-	  },
-
-	  mixins: [_stylePropable2.default],
-
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      cols: 2,
-	      padding: 4,
-	      cellHeight: 180
-	    };
-	  },
-	  getInitialState: function getInitialState() {
-	    return {
-	      muiTheme: this.context.muiTheme || (0, _getMuiTheme2.default)()
-	    };
-	  },
-	  getChildContext: function getChildContext() {
-	    return {
-	      muiTheme: this.state.muiTheme
-	    };
-	  },
-
-	  //to update theme inside state whenever a new theme is passed down
-	  //from the parent / owner using context
-	  componentWillReceiveProps: function componentWillReceiveProps(nextProps, nextContext) {
-	    var newMuiTheme = nextContext.muiTheme ? nextContext.muiTheme : this.state.muiTheme;
-	    this.setState({ muiTheme: newMuiTheme });
-	  },
-	  getStyles: function getStyles() {
-	    return {
-	      root: {
-	        display: 'flex',
-	        flexWrap: 'wrap',
-	        margin: -this.props.padding / 2
-	      },
-	      item: {
-	        boxSizing: 'border-box',
-	        padding: this.props.padding / 2
-	      }
-	    };
-	  },
-	  render: function render() {
-	    var _this = this;
-
-	    var _props = this.props;
-	    var cols = _props.cols;
-	    var padding = _props.padding;
-	    var cellHeight = _props.cellHeight;
-	    var children = _props.children;
-	    var style = _props.style;
-
-	    var other = _objectWithoutProperties(_props, ['cols', 'padding', 'cellHeight', 'children', 'style']);
-
-	    var styles = this.getStyles();
-
-	    var mergedRootStyles = this.mergeStyles(styles.root, style);
-
-	    var wrappedChildren = _react2.default.Children.map(children, function (currentChild) {
-	      var childCols = currentChild.props.cols || 1;
-	      var childRows = currentChild.props.rows || 1;
-	      var itemStyle = _this.mergeStyles(styles.item, {
-	        width: 100 / cols * childCols + '%',
-	        height: cellHeight * childRows + padding
-	      });
-
-	      return _react2.default.createElement(
-	        'div',
-	        { style: _this.prepareStyles(itemStyle) },
-	        currentChild
-	      );
-	    });
-
-	    return _react2.default.createElement(
-	      'div',
-	      _extends({ style: this.prepareStyles(mergedRootStyles) }, other),
-	      wrappedChildren
-	    );
-	  }
-	});
-
-	exports.default = GridList;
-	module.exports = exports['default'];
-
-/***/ },
+/* 467 */,
 /* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -48429,346 +48292,8 @@
 
 
 /***/ },
-/* 522 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(32);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _stylePropable = __webpack_require__(468);
-
-	var _stylePropable2 = _interopRequireDefault(_stylePropable);
-
-	var _getMuiTheme = __webpack_require__(492);
-
-	var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	var GridTile = _react2.default.createClass({
-	  displayName: 'GridTile',
-
-	  propTypes: {
-	    /**
-	     * An IconButton element to be used as secondary action target
-	     * (primary action target is the tile itself).
-	     */
-	    actionIcon: _react2.default.PropTypes.element,
-
-	    /**
-	     * Position of secondary action IconButton.
-	     */
-	    actionPosition: _react2.default.PropTypes.oneOf(['left', 'right']),
-
-	    /**
-	     * Theoretically you can pass any node as children, but the main use case is to pass an img,
-	     * in whichcase GridTile takes care of making the image "cover" available space
-	     * (similar to background-size: cover or to object-fit:cover).
-	     */
-	    children: _react2.default.PropTypes.node,
-
-	    /**
-	     * Width of the tile in number of grid cells.
-	     */
-	    cols: _react2.default.PropTypes.number,
-
-	    /**
-	     * Either a string used as tag name for the tile root element, or a ReactComponent.
-	     * This is useful when you have, for example, a custom implementation of
-	     * a navigation link (that knowsabout your routes) and you want to use it as primary tile action.
-	     * In case you pass a ReactComponent, please make sure that it passes all props,
-	     * accepts styles overrides and render it's children.
-	     */
-	    rootClass: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.object]),
-
-	    /**
-	     * Height of the tile in number of grid cells.
-	     */
-	    rows: _react2.default.PropTypes.number,
-
-	    /**
-	     * Override the inline-styles of the root element.
-	     */
-	    style: _react2.default.PropTypes.object,
-
-	    /**
-	     * String or element serving as subtitle (support text).
-	     */
-	    subtitle: _react2.default.PropTypes.node,
-
-	    /**
-	     * Title to be displayed on tile.
-	     */
-	    title: _react2.default.PropTypes.node,
-
-	    /**
-	     * Style used for title bar background.
-	     * Useful for setting custom gradients for example
-	     */
-	    titleBackground: _react2.default.PropTypes.string,
-
-	    /**
-	     * Position of the title bar (container of title, subtitle and action icon).
-	     */
-	    titlePosition: _react2.default.PropTypes.oneOf(['top', 'bottom'])
-	  },
-
-	  contextTypes: {
-	    muiTheme: _react2.default.PropTypes.object
-	  },
-
-	  //for passing default theme context to children
-	  childContextTypes: {
-	    muiTheme: _react2.default.PropTypes.object
-	  },
-
-	  mixins: [_stylePropable2.default],
-
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      titlePosition: 'bottom',
-	      titleBackground: 'rgba(0, 0, 0, 0.4)',
-	      actionPosition: 'right',
-	      cols: 1,
-	      rows: 1,
-	      rootClass: 'div'
-	    };
-	  },
-	  getInitialState: function getInitialState() {
-	    return {
-	      muiTheme: this.context.muiTheme || (0, _getMuiTheme2.default)()
-	    };
-	  },
-	  getChildContext: function getChildContext() {
-	    return {
-	      muiTheme: this.state.muiTheme
-	    };
-	  },
-	  componentDidMount: function componentDidMount() {
-	    this._ensureImageCover();
-	  },
-
-	  //to update theme inside state whenever a new theme is passed down
-	  //from the parent / owner using context
-	  componentWillReceiveProps: function componentWillReceiveProps(nextProps, nextContext) {
-	    var newMuiTheme = nextContext.muiTheme ? nextContext.muiTheme : this.state.muiTheme;
-	    this.setState({ muiTheme: newMuiTheme });
-	  },
-	  getStyles: function getStyles() {
-	    var _titleBar;
-
-	    var spacing = this.state.muiTheme.rawTheme.spacing;
-	    var themeVariables = this.state.muiTheme.gridTile;
-	    var actionPos = this.props.actionIcon ? this.props.actionPosition : null;
-	    var gutterLess = spacing.desktopGutterLess;
-
-	    var styles = {
-	      root: {
-	        position: 'relative',
-	        display: 'block',
-	        height: '100%',
-	        overflow: 'hidden'
-	      },
-	      titleBar: (_titleBar = {
-	        position: 'absolute',
-	        left: 0,
-	        right: 0
-	      }, _defineProperty(_titleBar, this.props.titlePosition, 0), _defineProperty(_titleBar, 'height', this.props.subtitle ? 68 : 48), _defineProperty(_titleBar, 'background', this.props.titleBackground), _defineProperty(_titleBar, 'display', 'flex'), _defineProperty(_titleBar, 'alignItems', 'center'), _titleBar),
-	      titleWrap: {
-	        flexGrow: 1,
-	        marginLeft: actionPos !== 'left' ? gutterLess : 0,
-	        marginRight: actionPos === 'left' ? gutterLess : 0,
-	        color: themeVariables.textColor,
-	        overflow: 'hidden'
-	      },
-	      title: {
-	        fontSize: '16px',
-	        textOverflow: 'ellipsis',
-	        overflow: 'hidden',
-	        whiteSpace: 'nowrap'
-	      },
-	      subtitle: {
-	        fontSize: '12px',
-	        textOverflow: 'ellipsis',
-	        overflow: 'hidden',
-	        whiteSpace: 'nowrap'
-	      },
-	      actionIcon: {
-	        order: actionPos === 'left' ? -1 : 1
-	      },
-	      childImg: {
-	        height: '100%',
-	        transform: 'translateX(-50%)',
-	        position: 'relative',
-	        left: '50%'
-	      }
-	    };
-	    return styles;
-	  },
-	  componeneDidUpdate: function componeneDidUpdate() {
-	    this._ensureImageCover();
-	  },
-	  _ensureImageCover: function _ensureImageCover() {
-	    var imgEl = _reactDom2.default.findDOMNode(this.refs.img);
-
-	    if (imgEl) {
-	      (function () {
-	        var fit = function fit() {
-	          if (imgEl.offsetWidth < imgEl.parentNode.offsetWidth) {
-	            imgEl.style.height = 'auto';
-	            imgEl.style.left = '0';
-	            imgEl.style.width = '100%';
-	            imgEl.style.top = '50%';
-	            imgEl.style.transform = imgEl.style.WebkitTransform = 'translateY(-50%)';
-	          }
-	          imgEl.removeEventListener('load', fit);
-	          imgEl = null; // prevent closure memory leak
-	        };
-	        if (imgEl.complete) {
-	          fit();
-	        } else {
-	          imgEl.addEventListener('load', fit);
-	        }
-	      })();
-	    }
-	  },
-	  render: function render() {
-	    var _this = this;
-
-	    var _props = this.props;
-	    var title = _props.title;
-	    var subtitle = _props.subtitle;
-	    var titlePosition = _props.titlePosition;
-	    var titleBackground = _props.titleBackground;
-	    var actionIcon = _props.actionIcon;
-	    var actionPosition = _props.actionPosition;
-	    var style = _props.style;
-	    var children = _props.children;
-	    var rootClass = _props.rootClass;
-
-	    var other = _objectWithoutProperties(_props, ['title', 'subtitle', 'titlePosition', 'titleBackground', 'actionIcon', 'actionPosition', 'style', 'children', 'rootClass']);
-
-	    var styles = this.getStyles();
-
-	    var mergedRootStyles = this.mergeStyles(styles.root, style);
-
-	    var titleBar = null;
-
-	    if (title) {
-	      titleBar = _react2.default.createElement(
-	        'div',
-	        { style: this.prepareStyles(styles.titleBar) },
-	        _react2.default.createElement(
-	          'div',
-	          { style: this.prepareStyles(styles.titleWrap) },
-	          _react2.default.createElement(
-	            'div',
-	            { style: this.prepareStyles(styles.title) },
-	            title
-	          ),
-	          subtitle ? _react2.default.createElement(
-	            'div',
-	            { style: this.prepareStyles(styles.subtitle) },
-	            subtitle
-	          ) : null
-	        ),
-	        actionIcon ? _react2.default.createElement(
-	          'div',
-	          { style: this.prepareStyles(styles.actionIcon) },
-	          actionIcon
-	        ) : null
-	      );
-	    }
-
-	    var newChildren = children;
-
-	    // if there is an image passed as children
-	    // clone it an put our styles
-	    if (_react2.default.Children.count(children) === 1) {
-	      newChildren = _react2.default.Children.map(children, function (child) {
-	        if (child.type === 'img') {
-	          return _react2.default.cloneElement(child, {
-	            ref: 'img',
-	            style: _this.prepareStyles(styles.childImg, child.props.style)
-	          });
-	        } else {
-	          return child;
-	        }
-	      });
-	    }
-
-	    var RootTag = rootClass;
-	    return _react2.default.createElement(
-	      RootTag,
-	      _extends({ style: this.prepareStyles(mergedRootStyles) }, other),
-	      newChildren,
-	      titleBar
-	    );
-	  }
-	});
-
-	exports.default = GridTile;
-	module.exports = exports['default'];
-
-/***/ },
-/* 523 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactAddonsPureRenderMixin = __webpack_require__(524);
-
-	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
-
-	var _svgIcon = __webpack_require__(527);
-
-	var _svgIcon2 = _interopRequireDefault(_svgIcon);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ToggleStarBorder = _react2.default.createClass({
-	  displayName: 'ToggleStarBorder',
-
-	  mixins: [_reactAddonsPureRenderMixin2.default],
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      _svgIcon2.default,
-	      this.props,
-	      _react2.default.createElement('path', { d: 'M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z' })
-	    );
-	  }
-	});
-
-	exports.default = ToggleStarBorder;
-	module.exports = exports['default'];
-
-/***/ },
+/* 522 */,
+/* 523 */,
 /* 524 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -51849,7 +51374,7 @@
 		render: function render() {
 			return _react2.default.createElement(
 				_reactBootstrap.Col,
-				{ xs: 12, md: 4 },
+				{ xs: 12, sm: 6, md: 4 },
 				_react2.default.createElement(_checkslist2.default, { data: this.state.data })
 			);
 		}
@@ -54561,9 +54086,13 @@
 			this.loadPatientsFromServer();
 		},
 		render: function render() {
+			var patientStyle = {
+				margin: "auto",
+				display: "block"
+			};
 			return _react2.default.createElement(
 				'div',
-				{ className: 'patient-box' },
+				{ style: patientStyle, className: 'patient-box' },
 				_react2.default.createElement(_patientslist2.default, { data: this.state.data })
 			);
 		}
@@ -54694,7 +54223,7 @@
 		render: function render() {
 			return _react2.default.createElement(
 				_reactBootstrap.Col,
-				{ xs: 12, md: 4 },
+				{ xs: 12, sm: 6, md: 4 },
 				_react2.default.createElement(_counterslist2.default, { data: this.state.data })
 			);
 		}
@@ -56056,6 +55585,272 @@
 	}
 	module.exports = exports['default'];
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 585 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsPureRenderMixin = __webpack_require__(524);
+
+	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
+
+	var _svgIcon = __webpack_require__(527);
+
+	var _svgIcon2 = _interopRequireDefault(_svgIcon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ActionInfo = _react2.default.createClass({
+	  displayName: 'ActionInfo',
+
+	  mixins: [_reactAddonsPureRenderMixin2.default],
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      _svgIcon2.default,
+	      this.props,
+	      _react2.default.createElement('path', { d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z' })
+	    );
+	  }
+	});
+
+	exports.default = ActionInfo;
+	module.exports = exports['default'];
+
+/***/ },
+/* 586 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _stylePropable = __webpack_require__(468);
+
+	var _stylePropable2 = _interopRequireDefault(_stylePropable);
+
+	var _colors = __webpack_require__(510);
+
+	var _colors2 = _interopRequireDefault(_colors);
+
+	var _getMuiTheme = __webpack_require__(492);
+
+	var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Avatar = _react2.default.createClass({
+	  displayName: 'Avatar',
+
+	  propTypes: {
+	    /**
+	     * The backgroundColor of the avatar. Does not apply to image avatars.
+	     */
+	    backgroundColor: _react2.default.PropTypes.string,
+
+	    /**
+	     * Can be used, for instance, to render a letter inside the avatar.
+	     */
+	    children: _react2.default.PropTypes.node,
+
+	    /**
+	     * The css class name of the root `div` or `img` element.
+	     */
+	    className: _react2.default.PropTypes.string,
+
+	    /**
+	     * The icon or letter's color.
+	     */
+	    color: _react2.default.PropTypes.string,
+
+	    /**
+	     * This is the SvgIcon or FontIcon to be used inside the avatar.
+	     */
+	    icon: _react2.default.PropTypes.element,
+
+	    /**
+	     * This is the size of the avatar in pixels.
+	     */
+	    size: _react2.default.PropTypes.number,
+
+	    /**
+	     * If passed in, this component will render an img element. Otherwise, a div will be rendered.
+	     */
+	    src: _react2.default.PropTypes.string,
+
+	    /**
+	     * Override the inline-styles of the root element.
+	     */
+	    style: _react2.default.PropTypes.object
+	  },
+
+	  contextTypes: {
+	    muiTheme: _react2.default.PropTypes.object
+	  },
+
+	  //for passing default theme context to children
+	  childContextTypes: {
+	    muiTheme: _react2.default.PropTypes.object
+	  },
+
+	  mixins: [_stylePropable2.default],
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      backgroundColor: _colors2.default.grey400,
+	      color: _colors2.default.white,
+	      size: 40
+	    };
+	  },
+	  getInitialState: function getInitialState() {
+	    return {
+	      muiTheme: this.context.muiTheme || (0, _getMuiTheme2.default)()
+	    };
+	  },
+	  getChildContext: function getChildContext() {
+	    return {
+	      muiTheme: this.state.muiTheme
+	    };
+	  },
+
+	  //to update theme inside state whenever a new theme is passed down
+	  //from the parent / owner using context
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps, nextContext) {
+	    var newMuiTheme = nextContext.muiTheme ? nextContext.muiTheme : this.state.muiTheme;
+	    this.setState({ muiTheme: newMuiTheme });
+	  },
+	  render: function render() {
+	    var _props = this.props;
+	    var backgroundColor = _props.backgroundColor;
+	    var color = _props.color;
+	    var icon = _props.icon;
+	    var size = _props.size;
+	    var src = _props.src;
+	    var style = _props.style;
+	    var className = _props.className;
+
+	    var other = _objectWithoutProperties(_props, ['backgroundColor', 'color', 'icon', 'size', 'src', 'style', 'className']);
+
+	    var styles = {
+	      root: {
+	        height: size,
+	        width: size,
+	        userSelect: 'none',
+	        borderRadius: '50%',
+	        display: 'inline-block'
+	      }
+	    };
+
+	    if (src) {
+	      var borderColor = this.state.muiTheme.avatar.borderColor;
+
+	      if (borderColor) {
+	        styles.root = this.mergeStyles(styles.root, {
+	          height: size - 2,
+	          width: size - 2,
+	          border: 'solid 1px ' + borderColor
+	        });
+	      }
+
+	      return _react2.default.createElement('img', _extends({}, other, {
+	        src: src,
+	        style: this.prepareStyles(styles.root, style),
+	        className: className
+	      }));
+	    } else {
+	      styles.root = this.mergeStyles(styles.root, {
+	        backgroundColor: backgroundColor,
+	        textAlign: 'center',
+	        lineHeight: size + 'px',
+	        fontSize: size / 2 + 4,
+	        color: color
+	      });
+
+	      var styleIcon = {
+	        margin: 8
+	      };
+
+	      var iconElement = icon ? _react2.default.cloneElement(icon, {
+	        color: color,
+	        style: this.mergeStyles(styleIcon, icon.props.style)
+	      }) : null;
+
+	      return _react2.default.createElement(
+	        'div',
+	        _extends({}, other, {
+	          style: this.prepareStyles(styles.root, style),
+	          className: className
+	        }),
+	        iconElement,
+	        this.props.children
+	      );
+	    }
+	  }
+	});
+
+	exports.default = Avatar;
+	module.exports = exports['default'];
+
+/***/ },
+/* 587 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsPureRenderMixin = __webpack_require__(524);
+
+	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
+
+	var _svgIcon = __webpack_require__(527);
+
+	var _svgIcon2 = _interopRequireDefault(_svgIcon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var FileFolder = _react2.default.createClass({
+	  displayName: 'FileFolder',
+
+	  mixins: [_reactAddonsPureRenderMixin2.default],
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      _svgIcon2.default,
+	      this.props,
+	      _react2.default.createElement('path', { d: 'M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z' })
+	    );
+	  }
+	});
+
+	exports.default = FileFolder;
+	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);
