@@ -16,11 +16,11 @@ var CountersList = React.createClass({
 				);
 		});
 		return (
-			<div className="card-panel">
+			<Paper zDepth={2} className="card-panel">
 				<List subheader="Timers">
 						{counterNodes}
 				</List>
-			</div>
+			</Paper>
 			);
 	}
 

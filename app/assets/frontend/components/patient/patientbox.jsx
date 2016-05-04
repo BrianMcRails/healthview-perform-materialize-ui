@@ -1,5 +1,6 @@
 import React from 'react';
 import PatientsList from './patientslist';
+import Paper from 'material-ui/lib/paper';
 
 var PatientBox = React.createClass({
 	loadPatientsFromServer: function(){
@@ -22,13 +23,14 @@ var PatientBox = React.createClass({
 		this.loadPatientsFromServer();
 	},
 	render: function(){
-		let patientStyle ={
-			margin: "auto",
-			display: "block"
+		let patientBoxStyle = {
+			border: "1px solid"
 		};
 		return(
-			<div style={patientStyle} className="patient-box">
+			<div className="patient-box">
+			<Paper zDepth={2} className="card-panel">
 				<PatientsList data={this.state.data} />
+			</Paper>
 			</div>
 			);
 	}

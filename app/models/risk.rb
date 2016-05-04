@@ -4,13 +4,15 @@ class Risk < ActiveRecord::Base
 	belongs_to :user
 	
 	def as_json(options={})
-		super(methods: [:name, :gravatar, :risk_percent, :risk_weight, :risk_comment])
+		super(methods: [:name, :gravatar, :risk_percent, :risk_weight, :risk_comment, :active])
 	end
 	
 	def name
 		user.display_name
 	end
-
+	def active
+		user.risk
+	end
    	def gravatar
 		user.gravatar
 	end

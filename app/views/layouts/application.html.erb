@@ -24,7 +24,8 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo left">HealthView Perform</a>
+        <%= link_to 'HealthView Perform', root_path, {:class=>'brand-logo left'} %>
+        
         <div class="right">
         <% if user_signed_in? %>
           <%= link_to current_user.display_name, "/profile" %>, 

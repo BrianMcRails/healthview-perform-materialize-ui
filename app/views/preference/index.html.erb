@@ -1,21 +1,21 @@
 <div class="container">
-<h2>Update Profile</h2>
+<h2>Update Preferences</h2>
 
-<%= form_for @user, url: "/profile" do |f| %>
+<%= form_for @user, url: "/preference", method: "patch" do |f| %>
  <div class="row">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <%= f.text_field :first_name %>
-          <label for="first_name">First Name</label>
+          <%= f.check_box :checklist %>
+          <label for="checklist">Checklist</label>
         </div>
         <div class="input-field col s6">
-          <%= f.text_field :last_name %>
-          <label for="last_name">Last Name</label>
+          <%= f.check_box :risk, {}, "true", "false" %>
+          <%= label(:risk, "Risk Stratification") %>
         </div>
         <div class="input-field col s6">
-          <%= f.text_field :mrn %>
-          <label for="mrn">MRN</label>
+          <%= f.check_box :counter %>
+          <label for="counter">Timers</label>
         </div>
         <div class="row">
         	<button type="submit" class="btn right">Save</button>
@@ -24,5 +24,4 @@
     </form>
   </div>
   <% end %>
-  <%= link_to 'Edit Preferences', preference_path %>
   </div>

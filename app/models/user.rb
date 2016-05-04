@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     has_many :risks
 
 	def as_json(options={})
-		{ id: id, name: display_name, gravatar: gravatar }
+		{ id: id, name: display_name, gravatar: gravatar, checklist: checklist, risk: risk, counter: counter}
 	end
 
    def display_name

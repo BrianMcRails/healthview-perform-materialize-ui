@@ -7,8 +7,27 @@ import CounterBox from './counter/counterbox';
 
 
 
-var Index = React.createClass({
 
+var Index = React.createClass({
+	loadPatientsFromServer: function(){
+		$.ajax({
+			url: "/patients",
+			dataType: 'json',
+			cache: false,
+			success: function(data){
+				this.setState({data: data});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	},
+	getInitialState: function(){
+		return {data: []};
+	},
+	componentDidMount: function(){
+		this.loadPatientsFromServer();
+	},
 	render() {
 		return (
 			<div className="container">

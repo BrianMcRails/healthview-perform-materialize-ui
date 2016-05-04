@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :risks
   get 'profile' => 'profile#index'
   patch 'profile' => 'profile#update'
+  get 'preference' => 'preference#index'
+  patch 'preference' => 'preference#update'
   
   devise_for :users
 
